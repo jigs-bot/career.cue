@@ -8,7 +8,7 @@ const GitHubStrategy = require('passport-github2').Strategy;
 const jwt = require('jsonwebtoken');
 const passportJWT = require('passport-jwt');
 const User = require('./models/user');
-
+const path = require('path');
 const bcrypt = require('bcrypt');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
@@ -19,8 +19,8 @@ const https = require('https');
 
 // SSL certificate files
 const options = {
-  key: fs.readFileSync('./cert.key'),
-  cert: fs.readFileSync('./cert.crt')
+  key: fs.readFileSync(path.resolve('./cert.key')),
+  cert: fs.readFileSync(path.resolve('./cert.crt'))
 };
 
 
