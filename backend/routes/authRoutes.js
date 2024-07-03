@@ -107,7 +107,7 @@ router.get('/google/callback', passport.authenticate('google',{session: false })
   console.log("user from callback->",req.user)
   // const token = jwt.sign({ id: req.user._id ,photo: req.user.photo,}, process.env.JWT_SECRET, { expiresIn: '1h' });
   // res.json({ token });
-  res.redirect(`https://localhost:5173/auth/callback?token=${req.user.token}&dp=${req.user.dp}`);
+  res.redirect(`https://career-cue-frontend.onrender.com/auth/callback?token=${req.user.token}&dp=${req.user.dp}`);
 });
 
 
