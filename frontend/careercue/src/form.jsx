@@ -19,7 +19,7 @@ const ExperienceForm = () => {
     const [experience, setExperience] = useState('');
     const [tags, setTags] = useState('');
     const navigate = useNavigate();
-
+    const backendUrl = process.env.BACKEND_URL;
     const handleSubmit = async (e) => {
         const jwtToken = localStorage.getItem('authToken');
         console.log("jwtToken from form page:",jwtToken)
@@ -33,7 +33,7 @@ const ExperienceForm = () => {
         };
 
         try {
-            const response = await axios.post('https://localhost:3000/experience', formData,{
+            const response = await axios.post({backendUrl}, formData,{
                 headers: {
                     Authorization: `Bearer ${jwtToken}`
                 }

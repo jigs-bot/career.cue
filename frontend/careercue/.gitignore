@@ -23,7 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-ca.key
-ca.crt
-cert.crt
-cert.key
+.env

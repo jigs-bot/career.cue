@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
 // import API_BASE_URL from '../config';
 import { Button } from "@/components/ui/button"
+const backendUrl = process.env.BACKEND_URL;
 import {
   Card,
   CardContent,
@@ -16,7 +17,7 @@ import { Label } from "@/components/ui/label"
 
 export function LoginForm() {
   const OnClickHandlerForGoogle = async () => {
-      window.location.href = 'https://localhost:3000/auth/google';     
+      window.location.href = `${backendUrl}/auth/google`;     
   };
 
   const OnClickHandlerForLogin = async () => {

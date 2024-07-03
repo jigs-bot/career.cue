@@ -48,7 +48,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-
+const backendUrl = process.env.BACKEND_URL;
 function allCard({val}) {
 
   const [blogs, setBlogs] = useState([]);
@@ -59,7 +59,7 @@ function allCard({val}) {
     const fetchBlogs = async (page) => {
       const jwtToken = localStorage.getItem('authToken');
       try {
-        const response = await axios.get('https://localhost:3000/experience/a', {
+        const response = await axios.get(`${backendUrl}/experience/a`, {
           params: { page, limit: 10, val },
           headers: {
             Authorization: `Bearer ${jwtToken}` // Attach the JWT token to the request
